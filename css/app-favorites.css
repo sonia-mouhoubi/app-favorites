@@ -1,0 +1,277 @@
+* {
+	box-sizing : border-box;
+}
+body {
+    scroll-behavior: smooth;
+    line-height: 1.15;
+	margin : 0;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.3em;
+}
+main {
+	margin : 0;	
+}
+section {
+    padding: 1em 0;
+}
+p {
+    margin: 0;
+    padding: 0.8em;
+}
+img {
+	max-width : 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+a {
+	text-decoration : none;
+	font-weight : bold;
+	color : black;
+}
+a:hover {
+    color: slategrey;
+}
+ul {
+    margin : 0;
+    padding : 0;
+}
+li {
+    list-style: none;
+}
+h1, h2, h3{
+    text-align : center;
+}
+h1 {
+	font-size : 1.5em;
+    font-family: 'Calligraffitti', cursive;
+    padding: 0.5em;
+    width: 100%;
+}
+h2 {
+	font-size : 2em;
+    font-family: 'Ruda', sans-serif;
+}
+
+/*================================================ HEADER ==================================================*/
+
+header {
+    padding-top: 3em;
+    height: 100vh;
+    color: white;
+    background-image: url(../img/smartphone-app.png);
+    background-color: rgba(0,0,0, 0.75);
+	background-repeat : no-repeat;
+    background-size: contain;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/*================================================ NAVIGATION  */
+
+nav {
+    z-index: 1;
+    position : fixed;
+    top: 0;
+	width : 0;
+    background-color: #4e9f8e; 
+    overflow : hidden;
+}
+nav a {
+    color: white;
+}
+#toggle[type="checkbox"]:checked ~ nav {
+    width: 100%;
+}
+
+/*============= MENU BURGER */
+
+.menu-icon {
+    z-index: 10;
+    position: relative;
+    width: 54px;
+    height: 54px; 
+}
+.menu-icon span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /*transform: translateX(-50%) translateY(-50%);*/
+    display: block;
+    width: 30px;
+    height: 5px;
+    background-color: #FFF;
+}
+.menu-icon :nth-child(1) {
+    transform: translateY(10px);
+}
+.menu-icon :nth-child(2) {
+    transform: translateY(-10px);
+}
+
+/*Utilisation des pseudos éléments ::before 
+et ::after afin de créer la barre au dessus et en dessous. */
+
+/*.menu-icon span::before, .menu-icon span::after {
+    content: '';
+    position: absolute;
+    transform: translateY(-10px);
+    display: block;
+    width: 30px;
+    height: 5px;
+    background-color: #FFF;
+}
+.menu-icon span::after {
+    transform: translateY(10px); 
+}
+*/
+/*============= MENU */
+
+.menu {
+    text-align: center;
+}
+.menu li {
+    padding : 1em;
+}
+
+/*============= LOGO */
+
+.logo {
+    font-size: 1.3em;
+}
+/*============================================= MAIN ==================================================*/
+/*================================================ PRESENTATION  */
+
+.presentation img {
+    width: 20%;
+}
+
+/*================================================ APP FAVORITE  */
+
+.background-article {
+    background-color : #4e9f8e; 
+    color: white;
+}
+
+/*================================================ APP FAVORITE  */
+
+.conclusion img {
+    width: 30%;
+}
+
+/*================================================ FOOTER ==================================================*/
+
+footer {
+    text-align: center;
+    background-color: rgba(0,0,0, 0.75);
+}
+footer a {
+    color : white;
+}
+
+/*====================================================================== VERSION DESKTOP ==================================================*/
+/*======================================================================                 ==================================================*/
+/*====================================================================== VERSION DESKTOP ==================================================*/
+
+@media screen and (min-width: 1024px){
+/*================================================ HEADER ==================================================*/
+    header {
+        background-position: initial;
+    }
+    header img {
+        width: 50%;
+    }
+    header h1, header p {
+        width: 50%;
+        margin-left: 50%;
+    }
+/*================================================ NAVIGATION */
+    nav {
+        display: block;
+        width: 100%;
+        padding : 1em;
+
+    }
+/*================================================ MENU */
+    .menu-icon {
+        display: none;
+    }
+    .menu {
+        text-align: left;
+        display: flex;
+        justify-content: space-around;
+    }
+    .menu li {
+        padding: 0;
+    }
+/*================================================ MAIN ==================================================*/
+/*================================================ PRESENTATION */
+    .presentation {
+        display: flex;
+        flex-wrap: wrap; 
+    }
+    .presentation h2 {
+        flex-basis : 100%;
+    }
+    .presentation p {
+        width: 50%;
+        margin: auto;
+    }
+    /*================================================ APP FAVORITE */
+    .app-fav {
+        display: flex; /* Flex sur les articles et h2 */
+        flex-wrap : wrap;
+    }
+    .app-fav h2 {
+        flex-basis : 100%;
+    }
+    article {
+        flex-basis : 50%;
+        align-items: center;
+        display: flex; /* Je mets l'article en flex pour que le h3 soit en dessous de l'image */
+        flex-wrap : wrap; 
+    }
+    article h3 {
+        flex-basis : 100%;
+    }
+    .app-fav :nth-child(2) { 
+        order: 2;
+    } 
+    .app-fav :nth-child(3) { 
+        order: 3;
+    } 
+    .app-fav :nth-child(4) { 
+        order: 5;
+    }
+    .app-fav :nth-child(5) { 
+        order: 4;
+    }
+    .app-fav :nth-child(6) { 
+        order: 6;
+    }
+    .app-fav :nth-child(7) { 
+        order: 7;
+    } 
+/*================================================ CONCLUSION */
+.conclusion {
+    display: flex;
+    flex-wrap: wrap; 
+}
+.conclusion h2 {
+    flex-basis : 100%;
+}
+.conclusion p {
+    width: 50%;
+    margin: auto;
+}
+/*================================================ FOOTER ==================================================*/
+    footer {
+        display: flex;
+        padding: 2em;
+        justify-content: space-around;
+    }
+
+}
+

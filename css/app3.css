@@ -1,0 +1,206 @@
+* {
+	box-sizing : border-box;
+}
+body {
+    scroll-behavior: smooth;
+    line-height: 1.15;
+	margin : 0;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.3em;
+}
+main {
+	margin : 0;	
+}
+section {
+    padding: 1em;
+}
+p {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+img {
+	max-width : 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+a {
+	text-decoration : none;
+	font-weight : bold;
+	color : black;
+}
+a:hover {
+    color: slategrey;
+}
+ul {
+    margin : 0;
+    padding : 0;
+}
+li {
+    list-style: none;
+}
+h1, h2, h3{
+    text-align : center;
+}
+h1 img {
+    width: 6em;
+}
+h2 {
+    font-family: 'Ruda', sans-serif;
+    font-size : 2em;
+}
+h3 {
+    font-size: 1.3em;
+}
+
+/*================================================ HEADER ==================================================*/
+
+header {
+    padding-top: 3em;
+}
+header p {
+    text-align: center;
+}
+
+/*================================================ NAVIGATION  */
+
+nav {
+    z-index: 1;
+    position : fixed;
+    top: 0;
+	width : 100%;
+    padding: 0.8em;
+    background-color: #F9FAFB;  
+    box-shadow: 0px 2px 4px rgb(0 0 0 / 28%);
+}
+
+/*============= MENU BURGER */
+
+.menu-icon {
+    z-index: 10;
+    position: relative;
+    width: 54px;
+    height: 54px; 
+}
+.menu-icon span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%); 
+    display: block;
+    width: 30px;
+    height: 5px;
+    background-color: #4a9b63;
+}
+/*Utilisation des pseudos éléments ::before 
+et ::after afin de créer la barre au dessus et en dessous. */
+
+.menu-icon span::before, .menu-icon span::after {
+    content: '';
+    position: absolute;
+    transform: translateY(-10px);
+    display: block;
+    width: 30px;
+    height: 5px;
+    background-color: #4a9b63;
+}
+.menu-icon span::after {
+    transform: translateY(10px); 
+}
+
+/*============= MENU BURGER */
+
+.menu {
+    text-align: center;
+}
+.menu li {
+    padding : 1em;
+}
+.menu a {
+    color: #3728aa;
+}
+
+/*============================================= MAIN ==================================================*/
+/*================================================ SECTION article  */
+
+.offre article {
+    padding: 0.5em;
+    background-color: #ff790f;
+    border-radius: 25px;
+    margin: 1em;
+}
+.offre a {
+    color :white;
+    text-align: center;
+}
+
+/*================================================ SECTION tarif  */
+
+.tarif  {
+    background-color: #3728aa;
+}
+.tarif a {
+    color: white;
+}
+/*================================================ FOOTER ==================================================*/
+
+footer {
+    padding: 2em;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+footer a {
+    padding : 0.6em;
+}
+
+/*====================================================================== VERSION DESKTOP ==================================================*/
+/*======================================================================                 ==================================================*/
+/*====================================================================== VERSION DESKTOP ==================================================*/
+@media screen and (min-width: 1024px){
+    
+/*================================================ HEADER ==================================================*/
+    header, main, footer {
+        padding-left: 15em;
+    }
+    header {
+        padding-top: 1em;
+    }
+/*================================================ NAVIGATION */
+    nav {
+        display: block;
+        width: 15em;
+        height: 100vh;
+    }
+/*================================================ MENU */
+    .menu-icon {
+        display: none;
+    }
+    .menu li {
+        padding: 3em 1em;
+    }
+/*================================================ MAIN ==================================================*/  
+/*================================================ Offre */
+    .offre {
+        display: flex;
+        flex: wrap;
+    }
+    .offre article {
+        width: 30%;
+        margin: auto;
+    }
+/*================================================ Tarif */
+    .tarif {
+        text-align: center;
+    }
+    
+/*================================================ FOOTER ==================================================*/  
+    footer {
+        flex-direction: row;
+    }
+    footer a {
+        padding : 0.5em;
+        padding-left: 9em;
+    }
+}

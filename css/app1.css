@@ -1,0 +1,239 @@
+* {
+	box-sizing : border-box;
+}
+body {
+    scroll-behavior: smooth;
+    line-height: 1.15;
+	margin : 0;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.3em;
+}
+main {
+	margin : 0;	
+}
+section {
+    padding: 1em 0;
+}
+p {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0.8em;
+}
+img {
+	max-width : 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+a {
+	text-decoration : none;
+	font-weight : bold;
+	color : black;
+}
+a:hover {
+    color: slategrey;
+}
+ul {
+    margin : 0;
+    padding : 0;
+}
+li {
+    list-style: none;
+}
+h1, h2, h3{
+    text-align : center;
+}
+h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size : 3em;
+    padding: 0.5em;
+    width: 100%;
+}
+h2 {
+    font-family: 'Ruda', sans-serif;
+    font-size : 2em;
+    color: orangered;   
+}
+h3 {
+    font-family: 'Calligraffitti', cursive;
+    font-size: 1.3em;
+    color: orangered;   
+}
+
+/*================================================ HEADER ==================================================*/
+
+header {
+    padding-top: 3em;
+    height: 100vh;
+    background : linear-gradient(rgba(173, 255, 170, 0.6), rgba(255, 255, 255, 0.6)),url(../img/yuka.PNG);
+	background-repeat : no-repeat;
+    background-size: contain;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    position: relative; /* Pour gerer le positionnement des plantes */
+}
+header div {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%; 
+    color: orangered;  
+    text-shadow : 0px 2px 4px rgb(0 0 0 / 90%); 
+}
+header p {
+    font-size: 2.3em;
+    text-align: center;
+}
+header img:nth-child(1) {
+    position: absolute;
+    top: 4em;
+    left: 4em;
+}
+header img:nth-child(2) {
+    position: absolute;
+    bottom: 2em;
+    right: 4em;
+}
+
+/*================================================ NAVIGATION  */
+
+nav {
+    z-index: 1;
+    position : fixed;
+    top: 0;
+	width : 100%;
+    padding: 0.8em;
+    background-color: white;  
+    box-shadow: 0px 2px 4px rgb(0 0 0 / 28%);
+}
+
+/*============= MENU BURGER */
+
+.menu-icon {
+    z-index: 10;
+    position: relative;
+    width: 54px;
+    height: 54px; 
+}
+.menu-icon span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%); 
+    display: block;
+    width: 30px;
+    height: 5px;
+    background-color: #4a9b63;
+}
+/*Utilisation des pseudos éléments ::before 
+et ::after afin de créer la barre au dessus et en dessous. */
+
+.menu-icon span::before, .menu-icon span::after {
+    content: '';
+    position: absolute;
+    transform: translateY(-10px);
+    display: block;
+    width: 30px;
+    height: 5px;
+    background-color: #4a9b63;
+}
+.menu-icon span::after {
+    transform: translateY(10px); 
+}
+
+/*============= MENU BURGER */
+
+.menu {
+    text-align: center;
+}
+.menu li {
+    padding : 1em;
+}
+
+/*============= LOGO */
+
+.logo {
+    font-size: 1.3em;
+}
+
+/*============================================= MAIN ==================================================*/
+/*================================================ PRESENTATION  */
+
+.présentation {
+    background-image: url(../img/illu-couteaux.png);
+    background-repeat : no-repeat;
+    background-position: bottom;
+}
+
+/*================================================ ACCESS  */
+.access {
+    background-image: url(../img/footer_desktop.svg);
+    height: 50vh;
+    background-repeat : no-repeat;
+    background-position: bottom; 
+}
+.access a:nth-child(3) {
+    display: block;
+    width: 6em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2em;
+    background-color: #4a9b63;
+    padding:0.5em;
+    border-radius: 50%; 
+}
+
+/*================================================ FOOTER ==================================================*/
+
+footer {
+    padding: 1em;
+    background-color: #4a9b63;
+    text-align: center;
+}
+
+/*====================================================================== VERSION DESKTOP ==================================================*/
+/*======================================================================                 ==================================================*/
+/*====================================================================== VERSION DESKTOP ==================================================*/
+@media screen and (min-width: 1024px){
+
+    p {
+        width: 70%;
+    }
+    /*================================================ HEADER ==================================================*/
+    /*================================================ NAVIGATION */
+    nav {
+        display: block;
+    }
+/*================================================ MENU */
+    .menu-icon {
+        display: none;
+    }
+    .menu {
+        text-align: left;
+        display: flex;
+        justify-content: space-around;
+    }
+    .menu li {
+        padding: 0;
+    }
+/*================================================ MAIN ==================================================*/  
+    .projet {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .projet h2 {
+        flex-basis : 100%;
+    }
+    .projet article {
+        width: 30%;
+        margin: auto;
+    }
+
+/*================================================ FOOTER ==================================================*/  
+    footer {
+        display: flex;
+        padding: 2em;
+        justify-content: space-around;
+    }
+}
